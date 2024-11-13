@@ -2,7 +2,7 @@
 import withVideos from 'next-videos';
 import withPWA from '@ducanh2912/next-pwa';
 
-const nextConfig = withVideos(
+const nextConfig =
   withPWA({
     images: {
       remotePatterns: [
@@ -43,7 +43,7 @@ const nextConfig = withVideos(
         image: '/static/images/fallback.png'
       }
     },
-  })
-);
+  });
+
 
 export default nextConfig
