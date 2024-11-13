@@ -1,4 +1,5 @@
-import { useEffect } from 'react/cjs/react.production.min';
+
+import { useEffect } from 'react';
 import '../styles/globals.css';  // Your global CSS (optional)
 import AddToHomeScreen from '@/components/shared/PWA/AddToHome';
 

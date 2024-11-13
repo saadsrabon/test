@@ -39,6 +39,8 @@ const withPWAConfig = withPWA({
   register: true,
   skipWaiting: true,
   manifest: '/manifest.json',
+  buildExcludes: [/middleware-manifest.json$/],
+  maximumFileSizeToCacheInBytes: 4000000,
   fallbacks: {
     image: '/static/images/fallback.png'
   }

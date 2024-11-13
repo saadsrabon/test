@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <link rel="manifest" href="/manifest.json" /> {/* Add manifest link */}
+      <link rel="manifest" href="/manifest.json" /> {/* Add manifest link */}
         {/* You can also add other meta tags here */}
       </Head>
       <body className={inter.className}>
