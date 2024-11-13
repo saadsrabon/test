@@ -38,22 +38,43 @@ const withPWAConfig = withPWA({
   dest: 'public',
   register: true,
   skipWaiting: true,
-  sw: '/sw.js',  
-  manifest: '/manifest.json',
-  reloadOnOnline: true,
+ 
   workboxOptions: {
     disableDevLogs: true,
-    swDest: 'public/sw.js',
-    clientsClaim: true,
-    skipWaiting: true,
     cleanupOutdatedCaches: true,
+    maximumFileSizeToCacheInBytes: 5000000,
+    runtimeCaching: [
+      {
+        urlPattern: /^https:\/\/mitribu\.s3\.us-east-2\.amazonaws\.com\/.*/i,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'image-cache',
+          expiration: {
+            maxEntries: 50,
+            maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+          },
+        },
+      },
+      {
+        urlPattern: /\.(?:js|css)$/i,
+        handler: 'StaleWhileRevalidate',
+        options: {
+          cacheName: 'static-resources',
+        },
+      },
+      {
+        urlPattern: /^https?.*/,
+        handler: 'NetworkFirst',
+        options: {
+          cacheName: 'offline-cache',
+          networkTimeoutSeconds: 10,
+          expiration: {
+            maxEntries: 200,
+          },
+        },
+      },
+    ],
   },
-  buildExcludes: [/middleware-manifest.json$/],
-  maximumFileSizeToCacheInBytes: 4000000,
-  fallbacks: {
-    image: '/static/images/fallback.png'
-  }
 });
-
 // Apply both withPWA and withVideos
 export default withVideos(withPWAConfig(nextConfig));
