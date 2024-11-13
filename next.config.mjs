@@ -38,7 +38,7 @@ const withPWAConfig = withPWA({
   dest: 'public',
   register: true,
   skipWaiting: true,
-  manifestPath: '/manifest.json',
+  manifest: '/manifest.json',
   fallbacks: {
     image: '/static/images/fallback.png'
   }
