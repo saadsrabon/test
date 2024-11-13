@@ -1,0 +1,302 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+/* @font-face {
+  font-family: Airbnb;
+  src: url('/public/AirbnbCereal_W_Bk.otf');
+}
+*{
+  font-family:Airbnb;
+} */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.heading-5 {
+  @apply text-sm font-bold;
+}
+.heading-3 {
+  @apply text-lg font-semibold;
+}
+.description-2 {
+  @apply text-gray-600;
+}
+.removeTypeScroll {
+  /* IE and Edge */
+  scrollbar-width: none; /* Firefox */ /* Hide scrollbars */
+}
+
+.removeTypeScroll::-webkit-scrollbar {
+  display: none;
+}
+.custom-input::-webkit-calendar-picker-indicator {
+  background: url('../assets/postYourActivities/calendar.png') no-repeat;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 55%;
+  right: 10px;
+  @apply overflow-visible z-10 -translate-y-1/2 cursor-pointer;
+}
+.time-input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 55%;
+  right: 10px;
+  @apply overflow-visible z-10 -translate-y-1/2 cursor-pointer;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Container for custom translate element */
+#custom_translate_element {
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #f5f5f5; */
+  border-radius: 5px;
+  overflow: hidden;
+  width: 150px !important;
+  position: relative;
+  transition: all 0.3s ease;
+  height: 80px;
+  margin-top: 10px;
+  gap: 10px;
+  cursor: pointer; /* Make it clear it's interactive */
+}
+
+/* Style for the Google Translate dropdown */
+#google_translate_element .goog-te-combo {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 100%; /* Take full width inside the container */
+}
+
+#google_translate_element .goog-te-combo:hover {
+  border-color: #666; /* Slightly darker hover border */
+}
+
+/* Hide the Google Translate banner */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+google_translate_element body {
+  top: 0px !important;
+}
+
+/* Hide Google branding text */
+.goog-te-gadget {
+  font-size: 0;
+}
+
+/* Hide the logo link */
+.goog-logo-link {
+  display: none !important;
+}
+
+/* Optionally make the select dropdown arrow more visible */
+#google_translate_element select.goog-te-combo {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url('data:image/svg+xml;base64,...') no-repeat right 10px center;
+  background-size: 10px;
+}
+.goog-logo-link,
+.goog-te-gadget span {
+  display: none !important;
+}
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+#google_translate_element .goog-te-combo {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#google_translate_element .goog-te-combo:hover {
+  border-color: #999 !important;
+}
+
+/* Hide Google branding */
+.goog-logo-link,
+.goog-te-gadget span {
+  display: none !important;
+}
+
+/* Hide the Google Translate banner */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+.VIpgJd-ZVi9od-ORHb-OEVmcd {
+  display: none !important;
+}
+/* .goog-te-gadget {
+  display: none !important;
+} */
+/* .goog-te-gadget div:nth-child(3) {
+  display: none;
+} */
+
+/* #google_translate_element {
+ 
+} */
+
+#google_translate_element .goog-te-gadget:last-child {
+  /* display: none !important; */
+}
+/* .skiptranslate span:last-child {
+  display: none;
+} */
+/* .skiptranslate {
+  display: flex;
+}
+
+.skiptranslate a + span {
+  display: none;
+} */
+/* General styles for pagination */
+/* General styles for pagination */
+/* .swiper-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+} */
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #ffffff !important;
+  border-radius: 50%;
+  margin: 0 5px;
+  transition: background 0.3s;
+}
+/* 
+.swiper-pagination-bullet-active {
+  background: #007aff;
+} */
+
+/* All other pagination bullets */
+/* Style for the Next button */
+
+#google_translate_element .skiptranslate.goog-te-gadget div:nth-last-child(3) {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+
+}
+.goog-te-combo{
+  cursor: pointer !important;
+  
+}
+
+#google_translate_element {
+  padding-top: 15% !important;
+}

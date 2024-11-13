@@ -1,0 +1,64 @@
+[
+  {
+
+    "serial": 6,
+    "type": "Adults",
+    "pricing_category": "adult",
+    "logo": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(5).png_9d631818-b1dd-4814-96c1-990502783f47"
+  },
+  {
+
+    "serial": 10,
+    "type": "Special needs",
+    "pricing_category": "adult",
+    "logo": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(9).png_8d5ecdce-541c-4457-a7f6-b45dd718fa60"
+  },
+  {
+    "serial": 2,
+    "type": "Singles",
+    "pricing_category": "adult",
+    "logo": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(12).png_6905dcd8-5fdc-478e-92a3-a979d2b3a29d"
+  },
+  {
+    "serial": 3,
+    "type": "Couples",
+    "pricing_category": "couple",
+    "logo": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(1).png_57b623ab-ecf5-4e3b-a89c-85e87a1f3089"
+  },
+  {
+    "serial": 5,
+    "type": "Kids",
+    "pricing_category": "child",
+    "logo": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(4).png_0cbab55e-65ac-4fde-868f-d7b653770523"
+  },
+  {
+    "serial": 7,
+    "type": "Elderly",
+    "pricing_category": "adult",
+    "logo": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(8).png_9de2a7d8-6069-4dd3-b83d-c92e47d1be94"
+  },
+  {
+    "serial": 8,
+    "type": "Only Men",
+    "pricing_category": "adult",
+    "logo": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(6).png_dd68f36b-6e2c-414d-aedd-37f29ee58c68"
+  },
+  {
+    "serial": 9,
+    "type": "Only Women",
+    "pricing_category": "adult",
+    "logo": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(7).png_dd68f36b-6e2c-414d-aedd-37f29ee58c68"
+  },
+  {
+    "serial": 4,
+    "type": "Families",
+    "pricing_category": "adult",
+    "logo": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(2).png_406761be-7a53-4c9f-beff-f989a0fbf85c"
+  },
+  {
+    "serial": 1,
+    "type": "Me",
+    "pricing_category": "adult",
+    "logo": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(12).png_6905dcd8-5fdc-478e-92a3-a979d2b3a29d"
+  }
+]

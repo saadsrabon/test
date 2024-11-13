@@ -1,0 +1,30 @@
+{
+  "name": "elplanes",
+  "short_name": "elplanes",
+  "description": "Your app description here",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#2EC6FE",
+  "theme_color": "#8936FF",
+  "icons": [
+    {
+      "src": "./icon512_maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./icon512_maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

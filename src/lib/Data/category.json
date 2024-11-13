@@ -1,0 +1,68 @@
+[
+  {
+    "serial": 1,
+    "img": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(12).png_6905dcd8-5fdc-478e-92a3-a979d2b3a29d",
+    "type": "For Me",
+    "pricing_category": "adult"
+  },
+  {
+    "serial": 2,
+    "img": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(12).png_6905dcd8-5fdc-478e-92a3-a979d2b3a29d",
+    "type": "For Singles",
+    "pricing_category": "adult"
+  },
+  {
+    "serial": 3,
+    "img": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(1).png_57b623ab-ecf5-4e3b-a89c-85e87a1f3089",
+    "type": "For Couples",
+    "pricing_category": "adult"
+  },
+  {
+    "serial": 4,
+    "img": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(2).png_406761be-7a53-4c9f-beff-f989a0fbf85c",
+    "type": "For Families",
+    "pricing_category": "adult"
+  },
+  {
+    "serial": 5,
+    "img": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(3).png_932b9917-7483-4ee1-a838-6cb70eb725cc",
+    "type": "For Babies/Infants",
+    "pricing_category": "child"
+  },
+  {
+    "serial": 6,
+    "img": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(4).png_0cbab55e-65ac-4fde-868f-d7b653770523",
+    "type": "Just For Kids",
+    "pricing_category": "child"
+  },
+  {
+    "serial": 7,
+    "img": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(5).png_9d631818-b1dd-4814-96c1-990502783f47",
+    "type": "For Adults",
+    "pricing_category": "adult"
+  },
+  {
+    "serial": 8,
+    "img": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(6).png_dd68f36b-6e2c-414d-aedd-37f29ee58c68",
+    "type": "For Men",
+    "pricing_category": "adult"
+  },
+  {
+    "serial": 9,
+    "img": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(7).png_5091736f-3d5c-4187-b4a3-329bc92ee597",
+    "type": "For Women",
+    "pricing_category": "adult"
+  },
+  {
+    "serial": 10,
+    "img": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(8).png_9de2a7d8-6069-4dd3-b83d-c92e47d1be94",
+    "type": "For Elderly",
+    "pricing_category": "adult"
+  },
+  {
+    "serial": 11,
+    "img": "https://mitribu.s3.us-east-2.amazonaws.com/Frame%20(9).png_8d5ecdce-541c-4457-a7f6-b45dd718fa60",
+    "type": "For People with special needs",
+    "pricing_category": "adult"
+  }
+]
