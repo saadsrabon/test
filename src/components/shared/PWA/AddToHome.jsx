@@ -6,39 +6,39 @@ export default function AddToHomeScreen() {
     const [isInstallable, setIsInstallable] = useState(false);
     const [isIOS, setIsIOS] = useState(false);
 
-    useEffect(() => {
-        // Debug log
-        console.log('AddToHomeScreen component mounted');
+    // useEffect(() => {
+    //     // Debug log
+    //     console.log('AddToHomeScreen component mounted');
 
-        // Check if it's iOS
-        const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        setIsIOS(isIOSDevice);
-        console.log('Is iOS device:', isIOSDevice);
+    //     // Check if it's iOS
+    //     const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    //     setIsIOS(isIOSDevice);
+    //     console.log('Is iOS device:', isIOSDevice);
 
-        // Check if PWA is already installed
-        const isPWAInstalled = window.matchMedia('(display-mode: standalone)').matches;
-        console.log('Is PWA already installed:', isPWAInstalled);
+    //     // Check if PWA is already installed
+    //     const isPWAInstalled = window.matchMedia('(display-mode: standalone)').matches;
+    //     console.log('Is PWA already installed:', isPWAInstalled);
 
-        const handler = (e) => {
-            console.log('beforeinstallprompt fired');
-            e.preventDefault();
-            setDeferredPrompt(e);
-            setIsInstallable(true);
-        };
+    //     const handler = (e) => {
+    //         console.log('beforeinstallprompt fired');
+    //         e.preventDefault();
+    //         setDeferredPrompt(e);
+    //         setIsInstallable(true);
+    //     };
 
-        window.addEventListener('beforeinstallprompt', handler);
+    //     window.addEventListener('beforeinstallprompt', handler);
 
-        // Check service worker status
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.getRegistration().then(registration => {
-                console.log('Service Worker status:', registration ? 'registered' : 'not registered');
-            });
-        }
+    //     // Check service worker status
+    //     if ('serviceWorker' in navigator) {
+    //         navigator.serviceWorker.getRegistration().then(registration => {
+    //             console.log('Service Worker status:', registration ? 'registered' : 'not registered');
+    //         });
+    //     }
 
-        return () => {
-            window.removeEventListener('beforeinstallprompt', handler);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('beforeinstallprompt', handler);
+    //     };
+    // }, []);
 
     const handleInstallClick = async () => {
         console.log('Install button clicked');
