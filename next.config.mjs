@@ -38,7 +38,16 @@ const withPWAConfig = withPWA({
   dest: 'public',
   register: true,
   skipWaiting: true,
+  sw: '/sw.js',  
   manifest: '/manifest.json',
+  reloadOnOnline: true,
+  workboxOptions: {
+    disableDevLogs: true,
+    swDest: 'public/sw.js',
+    clientsClaim: true,
+    skipWaiting: true,
+    cleanupOutdatedCaches: true,
+  },
   buildExcludes: [/middleware-manifest.json$/],
   maximumFileSizeToCacheInBytes: 4000000,
   fallbacks: {

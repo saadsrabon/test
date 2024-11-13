@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useState } from 'react';
 
 export default function AddToHomeScreen() {
@@ -6,9 +7,17 @@ export default function AddToHomeScreen() {
     const [isIOS, setIsIOS] = useState(false);
 
     useEffect(() => {
+        // Debug log
+        console.log('AddToHomeScreen component mounted');
+
         // Check if it's iOS
         const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         setIsIOS(isIOSDevice);
+        console.log('Is iOS device:', isIOSDevice);
+
+        // Check if PWA is already installed
+        const isPWAInstalled = window.matchMedia('(display-mode: standalone)').matches;
+        console.log('Is PWA already installed:', isPWAInstalled);
 
         const handler = (e) => {
             console.log('beforeinstallprompt fired');
@@ -18,30 +27,25 @@ export default function AddToHomeScreen() {
         };
 
         window.addEventListener('beforeinstallprompt', handler);
-        
-        // Check if app is already installed
-        const mediaQuery = window.matchMedia('(display-mode: standalone)');
-        const handleChange = (e) => {
-            console.log('standalone mode change:', e.matches);
-            if (e.matches) {
-                setIsInstallable(false);
-            }
-        };
-        
-        mediaQuery.addEventListener('change', handleChange);
-        // Check initial value
-        if (mediaQuery.matches) {
-            setIsInstallable(false);
+
+        // Check service worker status
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistration().then(registration => {
+                console.log('Service Worker status:', registration ? 'registered' : 'not registered');
+            });
         }
 
         return () => {
             window.removeEventListener('beforeinstallprompt', handler);
-            mediaQuery.removeEventListener('change', handleChange);
         };
     }, []);
 
     const handleInstallClick = async () => {
-        if (!deferredPrompt) return;
+        console.log('Install button clicked');
+        if (!deferredPrompt) {
+            console.log('No deferred prompt available');
+            return;
+        }
 
         try {
             deferredPrompt.prompt();
@@ -58,10 +62,13 @@ export default function AddToHomeScreen() {
         }
     };
 
-    if (!isInstallable && !isIOS) return null;
+    if (!isInstallable && !isIOS) {
+        console.log('Component hidden: not installable and not iOS');
+        return null;
+    }
 
     return (
-        <div className="fixed bottom-4 right-4">
+        <div className="fixed bottom-4 right-4 z-50">
             {isIOS ? (
                 <div className="bg-primary text-white px-4 py-2 rounded-lg shadow-lg">
                     Install this app: tap <span className="font-bold">Share</span> then 
@@ -70,7 +77,7 @@ export default function AddToHomeScreen() {
             ) : (
                 <button 
                     onClick={handleInstallClick}
-                    className="bg-primary text-white px-4 py-2 rounded-lg shadow-lg"
+                    className="bg-primary text-white px-4 py-2 rounded-lg shadow-lg hover:bg-primary/90"
                 >
                     Install App
                 </button>
