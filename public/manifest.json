@@ -1,8 +1,9 @@
 {
-  "name": "elplanes",
   "short_name": "elplanes",
+  "name": "elplanes",
   "description": "Your app description here",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "orientation": "any",
   "background_color": "#2EC6FE",
@@ -26,5 +27,29 @@
       "type": "image/png",
       "purpose": "any"
     }
-  ]
+  ],
+  "shortcuts": [
+    {
+      "name": "Search Activities",
+      "short_name": "Search",
+      "description": "Search for activities",
+      "url": "/search",
+      "icons": [{ "src": "/search-icon.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "My Bookings",
+      "short_name": "Bookings",
+      "description": "View your bookings",
+      "url": "/bookings",
+      "icons": [{ "src": "/booking-icon.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Profile",
+      "short_name": "Profile",
+      "description": "View your profile",
+      "url": "/profile",
+      "icons": [{ "src": "/profile-icon.png", "sizes": "192x192" }]
+    }
+  ],
+  "prefer_related_applications": false
 }
