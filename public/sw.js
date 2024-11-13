@@ -13,8 +13,6 @@
 
 // If the loader is already loaded, just stop.
 if (!self.define) {
-
-
   let registry = {};
 
   // Used for `eval` and `importScripts` where we can't get script URL by other means.
@@ -69,11 +67,24 @@ if (!self.define) {
     });
   };
 }
-define(['./workbox-631a4576'], (function (workbox) { 'use strict';
+define(['./workbox-1e54d6fe'], (function (workbox) { 'use strict';
 
-  importScripts();
+  importScripts("/fallback-development.js");
   self.skipWaiting();
   workbox.clientsClaim();
+
+  /**
+   * The precacheAndRoute() method efficiently caches and responds to
+   * requests for URLs in the manifest.
+   * See https://goo.gl/S9QRab
+   */
+  workbox.precacheAndRoute([{
+    "url": "/static/images/fallback.png",
+    "revision": "development"
+  }], {
+    "ignoreURLParametersMatching": [/^utm_/, /^fbclid$/, /ts/]
+  });
+  workbox.cleanupOutdatedCaches();
   workbox.registerRoute("/", new workbox.NetworkFirst({
     "cacheName": "start-url",
     plugins: [{
@@ -84,13 +95,20 @@ define(['./workbox-631a4576'], (function (workbox) { 'use strict';
         statusText: "OK",
         headers: e.headers
       }) : e
+    }, {
+      handlerDidError: async ({
+        request: e
+      }) => "undefined" != typeof self ? self.fallback(e) : Response.error()
     }]
   }), 'GET');
   workbox.registerRoute(/.*/i, new workbox.NetworkOnly({
     "cacheName": "dev",
-    plugins: []
+    plugins: [{
+      handlerDidError: async ({
+        request: e
+      }) => "undefined" != typeof self ? self.fallback(e) : Response.error()
+    }]
   }), 'GET');
-  self.__WB_DISABLE_DEV_LOGS = true;
 
 }));
 //# sourceMappingURL=sw.js.map
